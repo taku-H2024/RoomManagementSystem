@@ -1,7 +1,7 @@
 import sqlite3
 from datetime import datetime
 
-# データベースとテーブルを作成する関数
+# データベースとテーブルを作成する
 def create_database():
     conn = sqlite3.connect('room_status.db')  # データベースファイルを作成
     cursor = conn.cursor()
