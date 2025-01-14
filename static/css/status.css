@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+}
+h1, h2, h3 {
+    text-align: center;
+}
+
+/* current-dateを視覚的に強調 */
+#current-date {
+    font-weight: bold;
+    color: #333;
+}
+
+#totalPresence {
+    font-size: 1.2em;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: bold;
+}
+canvas {
+    display: block;
+    margin: 0 auto;
+}
+.date-info {
+    cursor: pointer;
+    /*margin: 10px 0;*/
+    color: #555;
+    background-color: #eeeeee;
+    text-align: center;
+    font-style: italic;
+    border: 1px solid #ccc;
+    
+}
+.date-info:hover {
+    background-color: #e0e0e0; /* ホバー時の色変更 */
+}
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.dropdown div {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+.dropdown div:hover {
+    background-color: #f1f1f1;
+}
+#presence-time {
+    color: #4bc0c0; /* 好きな色を指定 */
+    font-weight: bold; /* 視覚的な強調のために太字に */
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4bc0c0;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    top: 60px;
+    left: 600px
+}
+button:hover {
+    background-color: #4bc0c0;
+}

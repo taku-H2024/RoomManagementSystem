@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet" type="text/css">
+    <title>Current Attendance Status (CAS)</title>
+</head>
+<body>
+    <h1>Current Attendance Status (CAS)</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Status</th>
+                <th>Last Updated</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for name, status, last_updated in current_status %}
+            <tr>
+                <td><a href="{{ url_for('status', name=name) }}">{{ name }}</a></td>
+                <td>
+                    <span class="status {% if status == '在室' %}in{% else %}out{% endif %}">
+                        {{ status }}
+                    </span>
+                </td>
+                <td>{{ last_updated }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <footer>Attendance System © 2024</footer>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Status for {{ name }}</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="{{ url_for('static', filename='css/status.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>Daily Status for {{ name }}</h1>
+
+    <!-- 日付表示 -->
+    <div class="date-info" id="date-display">Date: <span id="current-date">{{ date }}</span></div>
+    <!-- プルダウン -->
+    <div class="dropdown" id="dropdown"></div>
+    <script src="{{ url_for('static', filename='js/get_data.js') }}"></script>
+
+
+    <div id="totalPresence">Total Presence Time: <span id="presence-time">{{ total_presence_time }}</span> minutes</div>
+
+    <canvas id="attendanceChart" width="800" height="400"></canvas>
+    
+    <script>
+        const data = {{ statuses | tojson }};
+    </script>
+    <script src="{{ url_for('static', filename='js/status.js') }}"></script>
+
+    <button id="back-to-cas-btn">Back to CAS</button>
+
+    <script>
+        // ボタンのクリックイベントを設定
+        document.getElementById('back-to-cas-btn').addEventListener('click', () => {
+            window.location.href = `/`; // 指定したURLに遷移
+        });
+    </script>
+
+</body>
+</html>
